@@ -1,0 +1,57 @@
+﻿@page "/counter"
+@using ElectronNET.API;
+@using ElectronNET.API.Entities;
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<input @bind-value="text" />
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private string text;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (HybridSupport.IsElectronActive)
+        {
+            Electron.IpcMain.On("basic-noti", (args) =>
+            {
+
+                var options = new NotificationOptions("Basic Notification", "Short message part")
+                {
+                    OnClick = async () => await Electron.Dialog.ShowMessageBoxAsync("Notification clicked")
+                };
+
+                Electron.Notification.Show(options);
+            });
+
+            Electron.IpcMain.On("advanced-noti", (args) =>
+            {
+                var options = new NotificationOptions("Notification with image", "Short message plus a custom image")
+                {
+                    OnClick = async () => await Electron.Dialog.ShowMessageBoxAsync("Notification clicked"),
+                    Icon = "/assets/img/programming.png"
+                };
+
+                Electron.Notification.Show(options);
+            });
+        }
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        var options = new NotificationOptions("Basic Notification", text)
+        {
+            OnClick = async () => await Electron.Dialog.ShowMessageBoxAsync("Notification clicked")
+        };
+
+        Electron.Notification.Show(options);
+
+    }
+}
