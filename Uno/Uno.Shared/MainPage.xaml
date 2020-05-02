@@ -8,7 +8,7 @@
     mc:Ignorable="d">
     <Page.Content>
         <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"> 
-		    <TextBlock Text="Hello, cologne from Uno!" Margin="20" FontSize="30" />
+		    <TextBlock Text="Hello, world from Uno!" Margin="20" FontSize="30" />
             <Button Content="Hit me!"></Button>
             <Slider></Slider>
         </StackPanel>
