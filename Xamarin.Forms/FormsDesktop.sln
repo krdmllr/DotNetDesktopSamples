@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsDesktop.Wasm", "FormsD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsDesktop.MacOS", "FormsDesktop.MacOS\FormsDesktop.MacOS.csproj", "{C6CA452F-9A47-4700-8673-DB2D30289E89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Forms.WPF", "Xamarin.Forms.WPF\Xamarin.Forms.WPF.csproj", "{B42C13D8-2264-404E-A225-E5EB4051D8F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormsDesktop.WPF", "FormsDesktop.WPF\FormsDesktop.WPF.csproj", "{B42C13D8-2264-404E-A225-E5EB4051D8F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
