@@ -29,8 +29,8 @@ namespace FormsDesktop.Views
 
         async void OnItemSelected(object sender, EventArgs args)
         {
-            var layout = (ListView)sender;
-            var item = (Item)layout.BindingContext;
+            var view = (View)sender;
+            var item = (Item)view.BindingContext;
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
         }
 
